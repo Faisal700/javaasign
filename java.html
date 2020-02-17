@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div align="center">
+  <h2 style="text-align: center; text-transform: uppercase; color: green ">My Friends List</h2>
+  <input type="text" class="mytext" name="" id="myInput" placeholder="Search Names ..." onkeyup="seachFun()"><br> <br>
+  <table id="mytable" border="1px solid green">
+    <tr class="header">
+      <th style="width: 35%">Name</th>
+      <th style="width: 20%">Degree</th>
+      <th style="width: 20%">Profession</th>
+      <th style="width: 20%">Contact</th>
+    </tr>
+    <tr>
+      <td>Faisal</td>
+      <td>BSCS</td>
+      <td>React js</td>
+      <td>03024407990</td>
+    </tr>
+    <tr>
+      <td>Asim</td>
+      <td>BSCS</td>
+      <td>React Js</td>
+      <td>03098978568</td>
+    </tr>
+    <tr>
+      <td>Bakhtawar</td>
+      <td>MSCS</td>
+      <td>full stack developer</td>
+      <td>03219089780</td>
+    </tr>
+    <tr>
+      <td>carry</td>
+      <td>MSC</td>
+      <td>ASP.Net</td>
+      <td>03488978009</td>
+    </tr>
+    <tr>
+      <td>Doctor</td>
+      <td>BSCS</td>
+      <td>ASP.Net</td>
+      <td>03134098009</td>
+    </tr>
+    <tr>
+      <td>Danish</td>
+      <td>MSC</td>
+      <td>ASP.Net</td>
+      <td>03043445789</td>
+    </tr>
+    <tr>
+      <td>Abdullah</td>
+      <td>BSC</td>
+      <td>ASP.Net</td>
+      <td>03416502177</td>
+    </tr>
+    <tr>
+      <td>Fazal</td>
+      <td>BSCS</td>
+      <td>ASP.Net</td>
+      <td>03024054453</td>
+    </tr>
+  </table>
+  </div>
+  <script>
+    const seachFun = ()=>{
+      let filter = document.getElementById('myInput').value.toUpperCase();
+      let mytable = document.getElementById('mytable');
+      let tr = mytable.getElementsByTagName('tr');
+      for(var i=0; i<tr.length; i++){
+
+        let td = tr[i].getElementsByTagName('td')[0];
+        if(td){
+          let textvalue = td.textcontent || td.innerHTML;
+          if(textvalue.toUpperCase().indexOf(filter)>-1){
+            tr[i].style.display = "";
+          }else{
+            tr[i].style.display = "none";
+          }
+        }
+
+      }
+          }
+  </script>
+
+</body>
+</html>
